@@ -59,3 +59,7 @@ plot_fib(n)
 ```
 
 ## Demos
+**1. Tender Analysis App:**
+```bash
+uvx run marimo edit --sandbox https://github.com/undeMalum/pyrdata-meetup-marimo/blob/main/tender_browser.py
+```
