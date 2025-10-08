@@ -57,3 +57,5 @@ def plot_fib(n: int) -> None:
 n = 20
 plot_fib(n)
 ```
+
+## Demos
