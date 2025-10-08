@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.16.1"
+__generated_with = "0.16.5"
 app = marimo.App(width="medium")
 
 
@@ -18,7 +18,7 @@ def _(mo):
 
 @app.cell
 def _():
-    a = 5
+    a = 6
     return (a,)
 
 
@@ -38,6 +38,7 @@ def _(mo):
 def _(a, b):
     a + b
     return
+
 
 if __name__ == "__main__":
     app.run()
