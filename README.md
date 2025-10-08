@@ -18,6 +18,10 @@ z * 3
 
 2. Reproducibility
 
+```markdown
+We need more ~~pure~~ graphical math!
+```
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
