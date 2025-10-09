@@ -1,5 +1,7 @@
 # Repository for my [PyrData Talk](https://www.linkedin.com/events/pyrdataspotkanie-57373625006636826625)
 
+[Presentation](https://docs.google.com/presentation/d/1he-Mqk-vlo-VN_dmaD-ibY6HcFWIkysmqmDzNe387yQ/edit?usp=sharing)
+
 Every file with `*.py` can be run with:
 ```bash
 uvx run marimo run --sandbox url/to/the/file.py
