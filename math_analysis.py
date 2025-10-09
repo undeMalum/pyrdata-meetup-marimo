@@ -40,5 +40,17 @@ def _(a, b):
     return
 
 
+@app.cell
+def _(a, b):
+    z = a + b
+    return (z,)
+
+
+@app.cell
+def _(z):
+    z * 3
+    return
+
+
 if __name__ == "__main__":
     app.run()
