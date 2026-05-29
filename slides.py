@@ -390,14 +390,14 @@ def _(media, mo):
                 [
                     mo.md("## Jupyter Notebook:"),
                     mo.image(media / "diffs.png"),
-                    mo.image(media / "load.png")
+                    mo.image(media / "load.png"),
                 ],
                 justify="center",
-                align="center"
-            )
+                align="center",
+            ),
         ],
         align="center",
-        justify="center"
+        justify="center",
     )
     return
 
@@ -455,7 +455,9 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.iframe("https://undemalum.github.io/portfolio/notebooks/git_friendliness/marimo/add_changes.html")
+    mo.iframe(
+        "https://undemalum.github.io/portfolio/notebooks/git_friendliness/marimo/add_changes.html"
+    )
     return
 
 
@@ -474,8 +476,9 @@ def _(mo):
 @app.cell
 def _(media, mo):
     mo.hstack(
-        [mo.md(
-            """
+        [
+            mo.md(
+                """
     ```
     +@app.cell
     +def _(a, b):
@@ -489,11 +492,11 @@ def _(media, mo):
     +    return
     ```
             """
-        ),
-        mo.image(media / "z.png") 
+            ),
+            mo.image(media / "z.png"),
         ],
         justify="center",
-        align="center"
+        align="center",
     )
     return
 
@@ -509,8 +512,129 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Reproducibility
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Problem Definition
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe(
+        "https://undemalum.github.io/portfolio/notebooks/reproducibility/jupyter/plotting.html"
+    )
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack([mo.image(media / "imports.png")], align="center")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Dependency managment in Python...
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.hstack(
+        [
+            mo.md(
+                """
+    - uv?
+    - conda?
+    - poetry?
+    - pip + venv?
+                        """
+            ),
+            mo.md(
+                """
+    - requirements.txt?
+    - setup.py?
+    - Pipfile?
+    - environment.yml?
+                        """
+            ),
+        ],
+        # align="center",
+        justify="center",
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## (1) Clone the repo
+    git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+    ## (2) Go into the project folder
+    cd /path/to/cloned/project
+
+    ## (3) Sync dependencies
+    uv sync
+
+    ## (4) Activate the virtual environment
+    source .venv/bin/activate       # Linux/MacOS
+
+    .venv/Scripts/Activate.ps1      # Windows
+
+    ## (5) Finally, launch Jupyter
+    jupyter notebook
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    - ## Many notebooks don’t declare dependencies at all
+    - ## Those that do, often declare them incorrectly.
+
+    #Conclusion: the majority of Jupyter notebooks in the wild **are not reproducible**.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe("https://undemalum.github.io/portfolio/notebooks/reproducibility/jupyter/error.html")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # `ModuleNotFoundError`
+    """)
+    return
+
+
 @app.cell
 def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #
+    """)
     return
 
 
