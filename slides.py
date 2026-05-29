@@ -85,7 +85,7 @@ def _(mo):
     # Marimo VS Jupyter Notebook
 
     1. Agenda (Problem Definition + Marimo Solution)
-       - Hidden Stated
+       - Hidden States
        - Git-Friendlines
        - Reporducibility
     2. Demos
@@ -680,8 +680,163 @@ def _(media, mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    #
+    ```bash
+    marimo edit --sandbox math_analysis.py
+    ```
+    ```bash
+    uvx marimo edit --sandbox url/math_analysis.py
+    ```
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ```python
+    # /// script
+    # requires-python = ">=3.11"
+    # dependencies = [
+    #     "marimo>=0.23.8",
+    #     "matplotlib==3.10.7",
+    #     "pandas==2.3.3",
+    # ]
+    # ///
+
+    import marimo
+
+    __generated_with = "0.23.8"
+    app = marimo.App(width="medium")
+    ```
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ```bash
+    $ uvx marimo edit --sandbox https://github.com/undeMalum/pyrdata-meetup-marimo/blob/main/slides.py
+
+    This notebook is hosted on a remote server.
+    Would you like to run it in a secure docker container? [Y/n]: Y
+
+    Starting containerized marimo notebook...
+    URL: [http://0.0.0.0:8080](http://0.0.0.0:8080)
+    ```
+    """)
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack(
+        [
+            mo.image(media / "math.png"),
+            mo.md("""
+            ```bash
+            uvx marimo edit --sandbox url/math_analysis.py
+            ```""")
+        ],align="center"
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    - ### Built-in dependency help
+    - ### Embedded environment metadata
+    - ### One-command reproducibility
+    - ### Optional sandboxing
+    """)
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack(
+        [
+            mo.md("##Demos!"),
+            mo.hstack(
+                [
+                    mo.vstack(
+                        [mo.md("### Cellular Automaton Art"),
+                        mo.image(media / "cellular.png")],align="center"
+                    ),
+                    mo.vstack(
+                        [
+                            mo.md("### Lego Prices Exploration"),
+                            mo.image(media / "lego.png")
+                        ],
+                        align="center"
+                    )
+                ]
+            )
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe("https://molab.marimo.io/github/marimo-team/gallery-examples/blob/main/notebooks/math/cellular-automaton-art.py/wasm")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe("https://molab.marimo.io/github/marimo-team/gallery-examples/blob/main/notebooks/dashboard/lego/notebook.py/wasm")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # This is not about marimo!
+    """)
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack(
+        [
+            mo.hstack(
+                [
+                    mo.vstack(
+                        [
+                            mo.image(media / "repo.png"),
+                            mo.md("Github repo"),
+                        ],
+                        align="center"
+                    ),
+                    mo.vstack(
+                        [
+                            mo.image(media / "study.png"),
+                            mo.md("Study on Jupyter"),
+                        ],
+                        align="center"
+                    ),
+                    mo.vstack(
+                        [
+                            mo.image(media / "examples.png"),
+                            mo.md("Marimo Examples"),                    ],
+                        align="center"
+                    )
+                ]
+            ),
+            mo.md(
+                """
+    Other valuable sources:
+    - Marimo docs: https://**docs.marimo.io**
+    - Marimo YT channel: https://www.youtube.com/**@marimo-team**
+    - Marimo blog: https://**marimo.io/blog**
+    - Marimo GitHub: https://github.com/**marimo-team/marimo**
+                """
+            )
+        ]
+    )
     return
 
 
