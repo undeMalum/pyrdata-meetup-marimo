@@ -191,10 +191,7 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
-    a = 1
-    b = a + 2
-    mo.show_code()
+def _():
     return
 
 
