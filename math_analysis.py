@@ -9,19 +9,22 @@
 
 import marimo
 
-__generated_with = "0.16.5"
+__generated_with = "0.23.8"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""This is the _beginning_ of the **hard** math analysis""")
+    mo.md(r"""
+    This is the _beginning_ of the **hard** math analysis
+    """)
     return
 
 
@@ -39,7 +42,9 @@ def _(a):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Let's **mix** some variables!""")
+    mo.md(r"""
+    Let's **mix** some variables!
+    """)
     return
 
 
@@ -54,6 +59,7 @@ def _():
     import pandas as pd
     import matplotlib.pyplot as plt
     from matplotlib.ticker import MaxNLocator
+
     return MaxNLocator, pd, plt
 
 
@@ -85,6 +91,7 @@ def _(MaxNLocator, pd, plt):
         ax.yaxis.set_major_locator(MaxNLocator(integer=True))
         plt.tight_layout()
         plt.show()
+
     return (plot_fib,)
 
 
