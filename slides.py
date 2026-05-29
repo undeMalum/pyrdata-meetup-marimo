@@ -54,8 +54,8 @@ def _(mo):
         [
             mo.image(
                 "https://undemalum.github.io/portfolio/posts/marimo-overview/images/jupytes_explanation.jpg",
-                # width=600,
-                # height=500
+                width=600,
+                height=500,
             ),
         ],
         align="center",
@@ -143,8 +143,7 @@ def _(mo):
                 "https://undemalum.github.io/portfolio/notebooks/hidden_states/jupyter/no_re-execution.html"
             ),
             mo.md(
-                """## Math ain't mathing:
-    * $a = 6$
+                """* $a = 6$
     * $b = a + 1 = 7$
     * so $a + b = 13$, not $12$!
             """
@@ -580,21 +579,26 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ## (1) Clone the repo
+    **(1) Clone the repo**
+
     git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
-    ## (2) Go into the project folder
+    **(2) Go into the project folder**
+
     cd /path/to/cloned/project
 
-    ## (3) Sync dependencies
+    **(3) Sync dependencies**
+
     uv sync
 
-    ## (4) Activate the virtual environment
+    **(4) Activate the virtual environment**
+
     source .venv/bin/activate       # Linux/MacOS
 
     .venv/Scripts/Activate.ps1      # Windows
 
-    ## (5) Finally, launch Jupyter
+    **(5) Finally, launch Jupyter**
+
     jupyter notebook
     """)
     return
@@ -603,17 +607,19 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    - ## Many notebooks don’t declare dependencies at all
-    - ## Those that do, often declare them incorrectly.
+    - ### Many notebooks don’t declare dependencies at all
+    - ### Those that do, often declare them incorrectly.
 
-    #Conclusion: the majority of Jupyter notebooks in the wild **are not reproducible**.
+    - ### Conclusion: the majority of Jupyter notebooks in the wild **are not reproducible**.
     """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.iframe("https://undemalum.github.io/portfolio/notebooks/reproducibility/jupyter/error.html")
+    mo.iframe(
+        "https://undemalum.github.io/portfolio/notebooks/reproducibility/jupyter/error.html"
+    )
     return
 
 
@@ -625,8 +631,49 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Marimo Solution
+    """)
+    return
+
+
 @app.cell
-def _():
+def _(mo):
+    mo.iframe("https://undemalum.github.io/portfolio/notebooks/reproducibility/marimo/error.html")
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.image(media / "missing.png")
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack([mo.image(media / "packages.png")], align="center")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe("https://undemalum.github.io/portfolio/notebooks/reproducibility/marimo/packages.html")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # PEP 723 – Inline script metadata
+    """)
+    return
+
+
+@app.cell
+def _(media, mo):
+    mo.vstack([mo.image(media / "script.png")])
     return
 
 
