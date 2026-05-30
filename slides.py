@@ -793,8 +793,32 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # This is not about marimo!
+    # This **is not ALL** about marimo!
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.image("https://duckdb.org/images/guides/marimo/marimo-reactive-sql.gif")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.video("https://github.com/user-attachments/assets/d6d3f57a-e997-423c-bf14-8d9fba75e310", autoplay=True)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack([mo.video("https://docs.marimo.io/_static/docs-df.mp4", autoplay=True)])
+    return
+
+
+@app.cell
+def _(mo):
+    mo.iframe("https://molab.marimo.io/notebooks")
     return
 
 
