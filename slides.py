@@ -607,6 +607,21 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    We were able to successfully run **24.11% **of the
+    unambiguous execution order Python notebooks. This number
+    is close to the results of a previous reproducibility study
+    about general computer systems research (**24.9%**). However,
+    the rate is way smaller (**4.03%**) when we count only notebooks
+    that produce the same results. _The most common causes of
+    failures were related to missing dependencies, the presence of
+    hidden states and out-of-order executions, and data accessibility._
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     - ### Many notebooks don’t declare dependencies at all
     - ### Those that do, often declare them incorrectly.
 
