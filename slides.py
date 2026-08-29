@@ -7,7 +7,7 @@
 
 import marimo
 
-__generated_with = "0.23.8"
+__generated_with = "0.24.0"
 app = marimo.App(width="medium", layout_file="layouts/slides.slides.json")
 
 
@@ -30,7 +30,7 @@ def _():
 def _(mo):
     mo.md(r"""
     # Marimo as the successor to Jupyter Notebook.
-    - Mateusz Konat, P.I.W.O, 30.05.2025
+    - Mateusz Konat, PyConPL, 29.08.2026
     """)
     return
 
